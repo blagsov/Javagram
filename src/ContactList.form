@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ContactList">
+  <grid id="27dc6" binding="panelContacts" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="180" y="20" width="575" height="476"/>
+    </constraints>
+    <properties>
+      <background color="-1"/>
+      <opaque value="false"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="64b36" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints border-constraint="North"/>
+        <properties>
+          <opaque value="false"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="1bee5" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="2">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="25"/>
+                <preferred-size width="-1" height="25"/>
+                <maximum-size width="-1" height="25"/>
+              </grid>
+            </constraints>
+            <properties>
+              <autoscrolls value="true"/>
+              <background color="-1644826"/>
+              <opaque value="true"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="a9f5b" class="javax.swing.JButton" binding="hide">
+                <constraints/>
+                <properties>
+                  <actionCommand value="X"/>
+                  <alignmentY value="0.0"/>
+                  <autoscrolls value="true"/>
+                  <background color="-16731162"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <disabledIcon value="sources/GUI Components/icon-hide.png"/>
+                  <disabledSelectedIcon value="sources/GUI Components/icon-hide.png"/>
+                  <font name="Microsoft JhengHei Light" size="19"/>
+                  <foreground color="-14671583"/>
+                  <hideActionText value="true"/>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="0"/>
+                  <icon value="sources/GUI Components/icon-hide.png"/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <maximumSize width="18" height="18"/>
+                  <minimumSize width="18" height="18"/>
+                  <opaque value="false"/>
+                  <preferredSize width="18" height="18"/>
+                  <pressedIcon value="sources/GUI Components/icon-hide.png"/>
+                  <requestFocusEnabled value="true"/>
+                  <rolloverIcon value="sources/GUI Components/icon-hide.png"/>
+                  <selected value="true"/>
+                  <selectedIcon value="sources/GUI Components/icon-hide.png"/>
+                  <text value=""/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                </properties>
+              </component>
+              <component id="6937f" class="javax.swing.JButton" binding="exit">
+                <constraints/>
+                <properties>
+                  <actionCommand value="X"/>
+                  <alignmentY value="0.0"/>
+                  <autoscrolls value="false"/>
+                  <background color="-16731162"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <disabledIcon value="sources/GUI Components/icon-close.png"/>
+                  <disabledSelectedIcon value="sources/GUI Components/icon-close.png"/>
+                  <font name="Microsoft JhengHei Light" size="19"/>
+                  <foreground color="-14671583"/>
+                  <hideActionText value="false"/>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="0"/>
+                  <icon value="sources/GUI Components/icon-close.png"/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <maximumSize width="18" height="18"/>
+                  <minimumSize width="18" height="18"/>
+                  <opaque value="false"/>
+                  <preferredSize width="18" height="18"/>
+                  <pressedIcon value="sources/GUI Components/icon-close.png"/>
+                  <requestFocusEnabled value="true"/>
+                  <rolloverIcon value="sources/GUI Components/icon-close.png"/>
+                  <selected value="true"/>
+                  <selectedIcon value="sources/GUI Components/icon-close.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="819e5" layout-manager="GridLayoutManager" row-count="1" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <alignmentX value="0.0"/>
+              <alignmentY value="0.0"/>
+              <background color="-16731162"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="ecd0f" class="javax.swing.JLabel" binding="logo">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <horizontalAlignment value="2"/>
+                  <icon value="sources/GUI Components/logo-micro.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="25b3f" class="javax.swing.JLabel" binding="maskBlue">
+                <constraints>
+                  <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <horizontalAlignment value="4"/>
+                  <icon value="sources/GUI Components/mask-blue-mini.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="bb8d3" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <alignmentX value="1.0"/>
+                  <foreground color="-1"/>
+                  <horizontalAlignment value="4"/>
+                  <text value="&lt;it is my name&gt;"/>
+                </properties>
+              </component>
+              <component id="e88b8" class="javax.swing.JButton" binding="setting">
+                <constraints>
+                  <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <horizontalAlignment value="4"/>
+                  <icon value="sources/GUI Components/icon-settings.png"/>
+                  <opaque value="false"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=""/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                </properties>
+              </component>
+              <vspacer id="23849">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <vspacer id="4f6d3">
+                <constraints>
+                  <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <hspacer id="d4d2f">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <grid id="22ef4" binding="contacts" layout-manager="GridLayoutManager" row-count="6" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="10" vgap="0">
+        <margin top="0" left="1" bottom="10" right="2"/>
+        <constraints border-constraint="West"/>
+        <properties>
+          <maximumSize width="151" height="300"/>
+          <minimumSize width="151" height="300"/>
+          <opaque value="true"/>
+          <preferredSize width="151" height="300"/>
+        </properties>
+        <border type="none">
+          <color color="-8553091"/>
+        </border>
+        <children>
+          <grid id="5da34" binding="panel1" custom-create="true" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="40"/>
+                <preferred-size width="-1" height="40"/>
+                <maximum-size width="-1" height="40"/>
+              </grid>
+            </constraints>
+            <properties/>
+            <border type="none">
+              <color color="-10790053"/>
+            </border>
+            <children>
+              <component id="56af0" class="javax.swing.JLabel">
+                <constraints border-constraint="West"/>
+                <properties>
+                  <horizontalAlignment value="2"/>
+                  <icon value="sources/GUI Components/mask-gray-online.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="4f347" class="javax.swing.JButton" binding="contact1Button" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <horizontalAlignment value="2"/>
+                  <maximumSize width="109" height="45"/>
+                  <minimumSize width="109" height="45"/>
+                  <preferredSize width="109" height="45"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value="&lt;contact1&gt;"/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="2f334" layout-manager="BorderLayout" hgap="5" vgap="0">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="150" height="38"/>
+                <preferred-size width="150" height="38"/>
+                <maximum-size width="150" height="38"/>
+              </grid>
+            </constraints>
+            <properties>
+              <alignmentX value="0.0"/>
+              <alignmentY value="0.0"/>
+              <background color="-262657"/>
+              <focusable value="false"/>
+            </properties>
+            <border type="line">
+              <title-color color="-4473925"/>
+              <color color="-921103"/>
+            </border>
+            <children>
+              <component id="ec2ca" class="javax.swing.JLabel">
+                <constraints border-constraint="West"/>
+                <properties>
+                  <horizontalAlignment value="0"/>
+                  <horizontalTextPosition value="4"/>
+                  <icon value="sources/GUI Components/icon-search.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="84d39" class="javax.swing.JTextField" binding="textSearch">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <caretColor color="-262657"/>
+                  <caretPosition value="0"/>
+                  <foreground color="-2697514"/>
+                  <text value="Поиск"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="6f23d" binding="activChat" custom-create="true" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="2" indent="0" use-parent-layout="false">
+                <minimum-size width="150" height="45"/>
+                <preferred-size width="150" height="45"/>
+                <maximum-size width="150" height="45"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+            </properties>
+            <border type="none">
+              <color color="-921103"/>
+            </border>
+            <children>
+              <component id="f95cc" class="javax.swing.JLabel">
+                <constraints border-constraint="West"/>
+                <properties>
+                  <horizontalAlignment value="2"/>
+                  <icon value="sources/GUI Components/mask-white.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="be222" class="javax.swing.JButton" binding="contact2Button" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="10"/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <maximumSize width="109" height="45"/>
+                  <minimumSize width="109" height="45"/>
+                  <opaque value="false"/>
+                  <preferredSize width="109" height="45"/>
+                  <text value="&lt;contact2&gt;"/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="b8806" binding="panel2" custom-create="true" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none">
+              <color color="-921103"/>
+            </border>
+            <children>
+              <component id="ba084" class="javax.swing.JLabel">
+                <constraints border-constraint="West"/>
+                <properties>
+                  <horizontalAlignment value="2"/>
+                  <icon value="sources/GUI Components/mask-gray.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="cec72" class="javax.swing.JButton" binding="contact3Button" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <maximumSize width="109" height="45"/>
+                  <minimumSize width="109" height="45"/>
+                  <preferredSize width="109" height="45"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value="&lt;contact3&gt;"/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="b1347" binding="panel3" custom-create="true" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="48"/>
+              </grid>
+            </constraints>
+            <properties/>
+            <border type="none">
+              <color color="-2697514"/>
+            </border>
+            <children>
+              <component id="2a50e" class="javax.swing.JLabel">
+                <constraints border-constraint="West"/>
+                <properties>
+                  <horizontalAlignment value="2"/>
+                  <icon value="sources/GUI Components/mask-gray-online.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="9064" class="javax.swing.JButton" binding="contact4Button" default-binding="true">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="true"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <horizontalAlignment value="2"/>
+                  <maximumSize width="109" height="45"/>
+                  <minimumSize width="109" height="45"/>
+                  <preferredSize width="109" height="45"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value="&lt;contact4&gt;"/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <component id="48a00" class="javax.swing.JButton" binding="newContact">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="10" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="26" height="26"/>
+                <preferred-size width="26" height="26"/>
+                <maximum-size width="26" height="26"/>
+              </grid>
+            </constraints>
+            <properties>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="false"/>
+              <defaultCapable value="false"/>
+              <focusPainted value="false"/>
+              <focusable value="false"/>
+              <icon value="sources/GUI Components/icon-plus.png"/>
+              <opaque value="false"/>
+              <requestFocusEnabled value="false"/>
+              <rolloverEnabled value="false"/>
+              <text value=""/>
+              <verifyInputWhenFocusTarget value="false"/>
+              <verticalAlignment value="0"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="47fd" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="10">
+        <margin top="0" left="1" bottom="20" right="5"/>
+        <constraints border-constraint="Center"/>
+        <properties>
+          <background color="-262657"/>
+          <maximumSize width="-1" height="38"/>
+          <minimumSize width="-1" height="38"/>
+          <opaque value="true"/>
+          <preferredSize width="-1" height="38"/>
+        </properties>
+        <border type="none">
+          <font/>
+        </border>
+        <children>
+          <grid id="6251b" layout-manager="GridLayoutManager" row-count="1" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="5"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="38"/>
+                <preferred-size width="-1" height="38"/>
+                <maximum-size width="-1" height="38"/>
+              </grid>
+            </constraints>
+            <properties>
+              <alignmentX value="0.0"/>
+              <alignmentY value="0.0"/>
+              <opaque value="false"/>
+            </properties>
+            <border type="line">
+              <color color="-921103"/>
+            </border>
+            <children>
+              <component id="382e0" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <horizontalAlignment value="2"/>
+                  <icon value="sources/GUI Components/mask-white-mini.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="d04f" class="javax.swing.JButton" binding="editContact">
+                <constraints>
+                  <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <defaultCapable value="false"/>
+                  <enabled value="true"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <horizontalAlignment value="11"/>
+                  <horizontalTextPosition value="0"/>
+                  <icon value="sources/GUI Components/icon-edit.png"/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <maximumSize width="20" height="20"/>
+                  <minimumSize width="20" height="20"/>
+                  <opaque value="false"/>
+                  <preferredSize width="20" height="20"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=""/>
+                  <verifyInputWhenFocusTarget value="false"/>
+                </properties>
+              </component>
+              <vspacer id="ca180">
+                <constraints>
+                  <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <component id="d47f1" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <foreground color="-2697514"/>
+                  <text value="&lt;contactNow&gt;"/>
+                </properties>
+              </component>
+              <hspacer id="19684">
+                <constraints>
+                  <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <vspacer id="6291f">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <vspacer id="b540f">
+                <constraints>
+                  <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+            </children>
+          </grid>
+          <vspacer id="cb127">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <grid id="28ed2" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="430" height="50"/>
+                <preferred-size width="560" height="50"/>
+                <maximum-size width="560" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <opaque value="false"/>
+            </properties>
+            <border type="none">
+              <title-color color="-4473925"/>
+            </border>
+            <children>
+              <component id="6fcce" class="javax.swing.JTextField" binding="textLetter">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <autoscrolls value="false"/>
+                  <background color="-2039584"/>
+                  <caretPosition value="0"/>
+                  <foreground color="-12895429"/>
+                  <horizontalAlignment value="2"/>
+                  <margin top="2" left="5" bottom="2" right="5"/>
+                  <maximumSize width="-1" height="35"/>
+                  <minimumSize width="500" height="35"/>
+                  <opaque value="true"/>
+                  <preferredSize width="540" height="35"/>
+                  <text value="Введите Ваше сообщение"/>
+                </properties>
+              </component>
+              <component id="96501" class="javax.swing.JButton" binding="Send">
+                <constraints border-constraint="East"/>
+                <properties>
+                  <alignmentY value="0.0"/>
+                  <borderPainted value="false"/>
+                  <contentAreaFilled value="false"/>
+                  <focusPainted value="false"/>
+                  <focusable value="false"/>
+                  <horizontalAlignment value="4"/>
+                  <horizontalTextPosition value="11"/>
+                  <icon value="sources/GUI Components/button-send.png"/>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <maximumSize width="62" height="45"/>
+                  <minimumSize width="62" height="45"/>
+                  <preferredSize width="62" height="45"/>
+                  <requestFocusEnabled value="false"/>
+                  <rolloverEnabled value="false"/>
+                  <text value=""/>
+                  <verticalAlignment value="3"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
