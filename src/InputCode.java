@@ -1,3 +1,7 @@
+import org.javagram.TelegramApiBridge;
+import org.javagram.response.AuthAuthorization;
+import org.javagram.response.object.UserContact;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -5,8 +9,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class InputCode extends JPanel {
     private JTextField inputCodeW;
@@ -38,24 +45,36 @@ public class InputCode extends JPanel {
                 System.exit(1);
             }
         });
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        TelegramApiBridge bridge = new TelegramApiBridge("149.154.167.50:443", 513573, "0f6da352025704385c3a257082bbd21c");
+
+        String code = reader.readLine().trim();
+        AuthAuthorization signIn = bridge.authSignIn(code);
+        // System.out.println(signIn.getUser().getFirstName());
+
+        ArrayList<UserContact> contacts = bridge.contactsGetContacts();
+        for (UserContact user : contacts)
+            System.out.println(user.getFirstName());
     }
 
 
     public JPanel getPanelCode() {
         return panelCode;
     }
+
     public JButton getHide() {
         return hide;
     }
 
     private void createUIComponents() {
-        panelCode = new JPanel()
-        {
+        panelCode = new JPanel() {
             @Override
-            protected void paintComponent (Graphics g){
-            super.paintComponent(g);
-            g.drawImage(background, 0, 0, null);
-        }
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.drawImage(background, 0, 0, null);
+            }
         };
 
         panellogo = new JPanel() {
@@ -76,8 +95,9 @@ public class InputCode extends JPanel {
 
 
     }
-    public void addActionListenerForSwitchAction(ActionListener actionListener)
-    {
+
+    public void addActionListenerForSwitchAction(ActionListener actionListener) throws IOException {
+
         nextForm.addActionListener(actionListener);
     }
 }

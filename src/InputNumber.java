@@ -1,3 +1,9 @@
+import org.javagram.TelegramApiBridge;
+import org.javagram.response.AuthAuthorization;
+import org.javagram.response.AuthCheckedPhone;
+import org.javagram.response.AuthSentCode;
+import org.javagram.response.object.UserContact;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -5,12 +11,16 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 
 public class InputNumber extends JPanel {
-    private JPanel roolPanel;
+    private JPanel rootPanel;
     private JButton NextFormButton;
     private JTextField telephonNumber;
     private JLabel Text;
@@ -23,6 +33,7 @@ public class InputNumber extends JPanel {
     private InputCode inputCode;
     private MyFrame myFrame;
     private InputNumber inputNumber;
+    private static final Pattern NUMBER = Pattern.compile("\\+?[1-9]+");
 
     public InputNumber() throws IOException {
 
@@ -42,13 +53,24 @@ public class InputNumber extends JPanel {
                 System.exit(1);
             }
         });
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        TelegramApiBridge bridge = new TelegramApiBridge("149.154.167.50:443", 513573, "0f6da352025704385c3a257082bbd21c");
+        String phoneNumber = reader.readLine().trim();
+        phoneNumber = phoneNumber.replaceAll("[^0-9]+", "");
+        AuthCheckedPhone checkedPhone = bridge.authCheckPhone(phoneNumber);
+        System.out.println(checkedPhone.isRegistered());
+
+        AuthSentCode sentCode = bridge.authSendCode(phoneNumber);
+
     }
+
     public JButton getHide() {
         return hide;
     }
 
-    public JPanel getRoolPanel() {
-        return roolPanel;
+    public JPanel getRootPanel() {
+        return rootPanel;
     }
 
 
@@ -69,7 +91,7 @@ public class InputNumber extends JPanel {
                 g.drawLine(0, 39, 315, 39);
             }
         };
-        roolPanel = new JPanel() {
+        rootPanel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
@@ -79,7 +101,8 @@ public class InputNumber extends JPanel {
 
     }
 
-    public void addActionListenerForSwitchAction(ActionListener actionListener) {
+    public void addActionListenerForSwitchAction(ActionListener actionListener) throws IOException {
+
         NextFormButton.addActionListener(actionListener);
     }
 

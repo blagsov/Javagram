@@ -19,7 +19,7 @@ class MyFrame extends JFrame {
     private Registration registration = new Registration();
 
     {
-        setContentPane(inputNumber.getRoolPanel());
+        setContentPane(inputNumber.getRootPanel());
         //setContentPane(registration.getPanelRegistration()); //для проверки, через кнопки выхода на эту панель нет
 
         inputNumber.addActionListenerForSwitchAction(e -> switchInputNumber());
@@ -131,7 +131,7 @@ class MyFrame extends JFrame {
 
 
     protected void switchForm() {
-        if (getContentPane() == inputNumber.getRoolPanel())
+        if (getContentPane() == inputNumber.getRootPanel())
             switchInputNumber();
         else if (getContentPane() == inputCode.getPanelCode())
             switchInputCode();
