@@ -1,28 +1,24 @@
 import org.javagram.TelegramApiBridge;
-import org.javagram.response.AuthAuthorization;
 import org.javagram.response.AuthCheckedPhone;
 import org.javagram.response.AuthSentCode;
-import org.javagram.response.object.UserContact;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 
 public class InputNumber extends JPanel {
+
     private JPanel rootPanel;
     private JButton NextFormButton;
-    private JTextField telephonNumber;
+    private JTextField phoneNumber;
     private JLabel Text;
     private JButton exit;
     private JPanel panellogo;
@@ -35,6 +31,8 @@ public class InputNumber extends JPanel {
     private InputNumber inputNumber;
     private static final Pattern NUMBER = Pattern.compile("\\+?[1-9]+");
 
+    private TelegramApiBridge bridge = new TelegramApiBridge("149.154.167.50:443", 513573, "0f6da352025704385c3a257082bbd21c");
+
     public InputNumber() throws IOException {
 
         try {
@@ -44,7 +42,7 @@ public class InputNumber extends JPanel {
             e.printStackTrace();
         }
 
-        telephonNumber.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+        phoneNumber.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
         exit.addMouseListener(new MouseAdapter() {
             @Override
@@ -54,14 +52,15 @@ public class InputNumber extends JPanel {
             }
         });
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        TelegramApiBridge bridge = new TelegramApiBridge("149.154.167.50:443", 513573, "0f6da352025704385c3a257082bbd21c");
-        String phoneNumber = reader.readLine().trim();
-        phoneNumber = phoneNumber.replaceAll("[^0-9]+", "");
-        AuthCheckedPhone checkedPhone = bridge.authCheckPhone(phoneNumber);
-        System.out.println(checkedPhone.isRegistered());
 
-        AuthSentCode sentCode = bridge.authSendCode(phoneNumber);
+        // bridge = new TelegramApiBridge("149.154.167.50:443", 513573, "0f6da352025704385c3a257082bbd21c");
+        String number = phoneNumber.getText().trim();
+        number = number.replaceAll("[^0-9]+", "");
+        if (NUMBER.matcher(number).matches()) {
+            AuthCheckedPhone checkedPhone = bridge.authCheckPhone(number);
+            System.out.println(checkedPhone.isRegistered());
+        }
+        else Text.setText("Неправильно введен номер!");
 
     }
 
@@ -105,5 +104,92 @@ public class InputNumber extends JPanel {
 
         NextFormButton.addActionListener(actionListener);
     }
+
+    public void setRootPanel(JPanel rootPanel) {
+        this.rootPanel = rootPanel;
+    }
+
+    public JButton getNextFormButton() {
+        return NextFormButton;
+    }
+
+    public void setNextFormButton(JButton nextFormButton) {
+        NextFormButton = nextFormButton;
+    }
+
+    public JTextField getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(JTextField phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public JLabel getText() {
+        return Text;
+    }
+
+
+    public JButton getExit() {
+        return exit;
+    }
+
+
+    public JPanel getPanellogo() {
+        return panellogo;
+    }
+
+    public void setPanellogo(JPanel panellogo) {
+        this.panellogo = panellogo;
+    }
+
+    public JPanel getPanelNumberInput() {
+        return panelNumberInput;
+    }
+
+    public void setPanelNumberInput(JPanel panelNumberInput) {
+        this.panelNumberInput = panelNumberInput;
+    }
+
+    public BufferedImage getLogo() {
+        return logo;
+    }
+
+    public void setLogo(BufferedImage logo) {
+        this.logo = logo;
+    }
+
+    public void setBackground(BufferedImage background) {
+        this.background = background;
+    }
+
+    public InputCode getInputCode() {
+        return inputCode;
+    }
+
+    public void setInputCode(InputCode inputCode) {
+        this.inputCode = inputCode;
+    }
+
+    public MyFrame getMyFrame() {
+        return myFrame;
+    }
+
+    public void setMyFrame(MyFrame myFrame) {
+        this.myFrame = myFrame;
+    }
+
+    public InputNumber getInputNumber() {
+        return inputNumber;
+    }
+
+    public void setInputNumber(InputNumber inputNumber) {
+        this.inputNumber = inputNumber;
+    }
+
+    public TelegramApiBridge getBridge() {
+        return bridge;
+    }
+
 
 }

@@ -1,6 +1,6 @@
 import org.javagram.TelegramApiBridge;
 import org.javagram.response.AuthAuthorization;
-import org.javagram.response.object.UserContact;
+import org.javagram.response.AuthSentCode;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -9,14 +9,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
 
 public class InputCode extends JPanel {
-    private JTextField inputCodeW;
+    private JTextField inputCode;
     private JButton nextForm;
     private BufferedImage background;
     private BufferedImage logo;
@@ -29,6 +26,7 @@ public class InputCode extends JPanel {
     private JPanel panelCodaInput;
     private ContactList contactList;
     private MyFrame myFrame;
+    private InputNumber inputNumber;
 
 
     public InputCode() throws IOException {
@@ -36,7 +34,7 @@ public class InputCode extends JPanel {
         background = ImageIO.read(new File("sources/fon-sova.jpg"));
         logo = ImageIO.read(new File("sources/GUI Components/logo-mini.png"));
 
-        inputCodeW.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+        inputCode.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 
         exit.addMouseListener(new MouseAdapter() {
             @Override
@@ -46,17 +44,14 @@ public class InputCode extends JPanel {
             }
         });
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-        TelegramApiBridge bridge = new TelegramApiBridge("149.154.167.50:443", 513573, "0f6da352025704385c3a257082bbd21c");
-
-        String code = reader.readLine().trim();
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+//
+        TelegramApiBridge bridge = inputNumber.getBridge();
+        AuthSentCode sentCode = bridge.authSendCode(String.valueOf(inputNumber.getPhoneNumber()));
+        String code = inputCode.getText();
         AuthAuthorization signIn = bridge.authSignIn(code);
         // System.out.println(signIn.getUser().getFirstName());
 
-        ArrayList<UserContact> contacts = bridge.contactsGetContacts();
-        for (UserContact user : contacts)
-            System.out.println(user.getFirstName());
     }
 
 

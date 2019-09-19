@@ -1,8 +1,11 @@
+import org.javagram.response.object.UserContact;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ContactList extends JPanel {
 
@@ -72,6 +75,10 @@ public class ContactList extends JPanel {
                 System.exit(1);
             }
         });
+
+//        ArrayList<UserContact> contacts = bridge.contactsGetContacts();
+//        for (UserContact user : contacts)
+//            System.out.println(user.getFirstName());
 
         textLetter.setBorder(javax.swing.BorderFactory.createEmptyBorder());
         textSearch.setBorder(javax.swing.BorderFactory.createEmptyBorder());
